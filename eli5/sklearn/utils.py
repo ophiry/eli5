@@ -46,7 +46,7 @@ def predict_proba(estimator, X):
     """
     if is_probabilistic_classifier(estimator):
         try:
-            proba, = estimator.predict_proba(X)
+            proba = estimator.predict_proba(X)
             return proba
         except NotImplementedError:
             return None
