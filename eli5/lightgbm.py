@@ -249,7 +249,7 @@ def _get_prediction_feature_weights(lgb, X, n_targets):
     _compute_node_values(tree_info)
     pred_leafs = lgb.booster_.predict(X, pred_leaf=True).reshape(-1, n_targets)
     tree_info = np.array(tree_info).reshape(-1, n_targets)
-    assert pred_leafs.shape == tree_info.shape
+    #assert pred_leafs.shape == tree_info.shape
 
     res = []
     for target in range(n_targets):
