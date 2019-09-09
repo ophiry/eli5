@@ -105,7 +105,7 @@ def get_decision_path_explanation(estimator, doc, vec, vectorized,
             target=target,
             feature_weights=get_top_features(all_feature_weights, scale),
             score=score,
-            proba=proba[label_id] if proba is not None else None,
+            proba=proba[:, label_id] if proba is not None else None,
         )
         add_weighted_spans(doc, vec, vectorized, target_expl)
         explanation.targets.append(target_expl)
